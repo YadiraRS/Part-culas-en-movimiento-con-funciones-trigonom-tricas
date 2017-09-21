@@ -37,8 +37,8 @@ particula(float x_,float y_, float v_, float a_, float t_, color c_){
   particula(){
     x = random(400);
     y = random (400);
-    v = random (10);
-    a = random (TWO_PI);
+    v = random (4);
+    a = random (180);
     t = random (1,30);
     c = color (random (255), random (255), random(255));
     
@@ -47,8 +47,8 @@ particula(float x_,float y_, float v_, float a_, float t_, color c_){
   particula(float x_, float y_){
     x = x_;
     y = y_;
-    v = random (10);
-    a = random (TWO_PI);
+    v = random (4);
+    a = random (180);
     t = random (1,30);
     c = color (random (255), random (255), random(255));
     
@@ -64,11 +64,23 @@ particula(float x_,float y_, float v_, float a_, float t_, color c_){
 }
 
  void movimiento(){
-  
- float dum=(-21*PI)/50;
- x=x+cos((dum)*random(-4,1));
- y=y+cos((dum)*random(-4,1));
+   
+x=x+v*sin(a);
+y=y+v*sin(a);
+
+if(x>=0){
+a*=-1;}
+if(x<=400){
+a*=-1;}
+if(y>=0){
+a*=-1;}
+if(y<=400){
+a*=-1;}
+
+   
+
+
  
-}
+ }
   
 }
